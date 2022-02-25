@@ -9,7 +9,7 @@ const styles = {
 const projectName = "random-quote-machine";
 let quotesData;
 
-const colors = [
+let colors = [
   "#16a085",
   "#27ae60",
   "#2c3e50",
@@ -23,6 +23,7 @@ const colors = [
   "#77B1A9",
   "#73A857",
 ];
+
 let currentQuote = "",
   currentAuthor = "";
 
@@ -62,11 +63,11 @@ function getQuote() {
 
   $("#tumblr-quote").attr(
     "href",
-    "http://www.facebook.com/sharer.php?u=http%3A%2F%2Fquotemachine.com%2Fcontent+of+my+page" +
+    "https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" +
       encodeURIComponent(currentAuthor) +
       "&content=" +
       encodeURIComponent(currentQuote) +
-      "&canonicalUrl=http://www.facebook.com/sharer.php?u=http%3A%2F%2Fquotemachine.com%2Fcontent+of+my+page"
+      "&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button"
   );
 
   $(".quote-text").animate({ opacity: 1 }, 500, function () {
@@ -129,7 +130,7 @@ function App() {
             title="Post this quote on tumblr!"
             target="_blank"
           >
-            <i className="fa fa-facebook"></i>
+            <i className="fa fa-tumblr"></i>
           </a>
           <button className="button" id="new-quote" style={styles}>
             New quote
